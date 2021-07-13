@@ -1,5 +1,3 @@
-# Project Name
-
 ## Instructions how to start
 
 create `.env` file like the example `.env.sample`
@@ -8,100 +6,88 @@ start with `npm run start-dev`
 
 **http://localhost:5000**
 
+# Project's name: Netflix clone??
+​
+​
 ## Description
-
-Describe your project in one/two lines.
-
-## Motivation
-
-Just a litle API for educational purposes.
-
-## User Stories
-
+​
+Netflix clone is an atempt to clone Netflix.
+​
+## USER STORIES (MVP)
+​
 **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault
-
+​
 **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
+​
+**Landing page** - As a user I want to be able to access the landing page so that I see what the app is about and login and signup
+​
+**Sign up** - As a user I want to be able to create an account to use the app and see movies
+​
+**Login** - As a user I want to be able to log in on the webpage 
+​
+**Logout** - As a user I want to be able to log out from the webpage
+​
+**Profile** - As a user I want to be able to see my profile and edit it
+​
 
-**Homepage** - As a user I want to be able to access the homepage so that I see what the app is about and login and signup
+​
+## BACKLOG
+​
+**filter** - Filter the movies (action, drama, terror)
 
-**Sign up** - As a user I want to sign up on the webpage so that I can see all the events that I could attend
-
-**Login** - As a user I want to be able to log in on the webpage so that I can get back to my account
-
-**Logout** - As a user I want to be able to log out from the webpage so that I can make sure no one will access my account
-
-**Events list** - As a user I want to see all the events available so that I can choose which ones I want to attend
-
-**Events create** - As a user I want to create an event so that I can invite others to attend
-
-**Events detail** - As a user I want to see the event details and attendee list of one event so that I can decide if I want to attend
-
-**Attend event** - As a user I want to be able to attend to event so that the organizers can count me in
-
-## Backlog
-
-List of other features outside of the MVPs scope
-
-User profile: - see my profile - upload my profile picture - see other users profile - list of events created by the user - list events the user is attending
-
-Geo Location: - add geolocation to events when creating - show event in a map in event detail page - show all events in a map in the event list page
-
-Homepage: - …
-
-## ROUTES:
-
-### Endpoints
-
-| Method | Path         | description     | Body |
-| :----: | ------------ | --------------- | ---- |
-|  GET   | `/protected` | protected route |      |
-
-### Auth
-
-| Method | Path      | description    | Body                     |
-| :----: | --------- | -------------- | ------------------------ |
-|  GET   | `/whoami` | who am i       |                          |
-|  POST  | `/signup` | signup a user  | `{ username, password }` |
-|  POST  | `/login`  | login a user   | `{ username, password }` |
-|  GET   | `/logout` | logout session |                          |
-
-## Models
-
+​
+​
+## ROUTES
+​
+| Name            | Method | Endpoint                      | Description                                      | Body                                  |        |
+| --------------- | ------ | ----------------------------- | ------------------------------------------------ | ------------------------------------- | --------------- |
+| Home           | GET    | /home                            | See all the movies preview                             |                                       |                 |
+| Sign up    | POST   | /signup                        | Sign up a user with an account                          | { mail, username, password }                                   |              |
+| Log in          | POST   | /login                        | Log in the user                                  | { mail, password }                      |            |
+| Logout   | GET    | /logout                            | Logout a user                       |                                       |  |
+​
+​
+​
+## MODELS
+​
+Todo model
+​
+```js
+{
+    title: String,
+    description: String
+}
+```
+​
 User model
-
-```javascript
+​
+```js
 {
-	username: String;
-	password: String;
+    username: String,
+    email: String,
+    hashedPassword: String,
+    tasks: [{ type: Schema.Types.ObjectId, ref: 'Todo' }]
 }
 ```
-
-Event model
-
-```javascript
-{
-	owner: ObjectId<User>
-	name: String
-	description: String
-	date: Date
-	location: String
-}
-```
-
-## Links
-
-### Trello
-
-Link to Trello
-
-### Git
-
-The url to your repository and to your deployed project
-
-[Repository Link](http://github.com/)
-
-[Deploy Link](http://heroku.com/)
-
+​
+## LINKS
+​
+### Github project
+​
+- [Frontend project]()
+- [Backend project]()
+​
+### Deploy links
+​
+- [Frontend deploy]()
+​
+### Project kanban
+- [Github projects]()
+​
+### Wireframes 
+​
+- [InVision with Wireframes]()
+​
 ### Slides
-
-[Slides Link](http://slides.com/)
+​
+- [Slides]()
