@@ -6,8 +6,9 @@ start with `npm run start-dev`
 
 **http://localhost:5000**
 
-# Project's name: Netflix clone??
+# Project's name: 
 ​
+Netflix clone?
 ​
 ## Description
 ​

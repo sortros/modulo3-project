@@ -16,7 +16,8 @@
 		"express-session": "^1.17.2",
 		"http-errors": "^1.7.2",
 		"mongoose": "^5.13.2",
-		"morgan": "^1.10.0"
+		"morgan": "^1.10.0",
+		"react-router-dom": "^5.2.0"
 	},
 	"devDependencies": {
 		"eslint": "^7.30.0",
