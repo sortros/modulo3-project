@@ -6,12 +6,15 @@ const userSchema = new Schema(
 	{
 		username: { type: String, required: true, unique: true },
 		hashedPassword: { type: String, required: true },
+		email: { type: String, required: true, unique: true },
+		favouriteMovies: [{ type: Schema.Types.ObjectId, ref: 'Movie' }],
+		watchLater: [{ type: Schema.Types.ObjectId, ref: 'Movie' }],
 	},
 	{
 		timestamps: {
 			createdAt: 'created_at',
 			updatedAt: 'updated_at',
-		},// bla, bla , bla res.json, res de res.render ni coses raras
+		},
 	}
 );
 

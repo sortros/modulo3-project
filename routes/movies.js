@@ -1,80 +1,54 @@
 const express = require('express');
-const checkIfUserIsLoggedIn = require('../middlewares/auth');
-const Recipe = require('../models/recipe-model');
-const User = require('../models/user-model');
+const { checkIfLoggedIn } = require('../middlewares');
+const Movie = require('../models/Movie');
+// const User = require('../models/User');
 
 const router = express.Router();
-router.get('/search', checkIfUserIsLoggedIn, (req, res) => {
-  res.json;
-});
-router.post('/search', checkIfUserIsLoggedIn, (req, res, next) => {
-  {
-    res.json;
-  }
-    .then(moviesFounded => {
-      res.json;
-    })
-    .catch(err => {
-      next(err);
-      res.json;
-    });
-});
-router.get('/moviess/:id/details', checkIfUserIsLoggedIn, (req, res, next) => {
-  Movie.findById(req.params.id)
-    .then(movie => {
-      res.json;
-    })
-    .catch(err => {
-      next(err);
-    });
-});
-router.post('/movies/:id/details', checkIfUserIsLoggedIn, (req, res, next) => {
-  const user = req.session.currentUser;
-  const { id } = req.params;
-  // eslint-disable-next-line no-underscore-dangle
-  User.findById(user._id)
-    // eslint-disable-next-line consistent-return
-    // eslint-disable-next-line no-shadow
-    .then(user => {
-      if (user.favouriteMovies.includes(id) === true) {
-        res.json;
-        return;
-      }
-      user.favouriteMovies.push(id);
-      user.save();
-      res.json;
-    })
-    .catch(err => {
-      next(err);
-    });
+
+router.get('/', async (req, res, next) => {
+	const movies = await Movie.find({});
+	if (!movies) {
+		res.status(404).json('There are no movies in this database');
+	}
+	res.status(200).json(movies);
 });
 
-router.get('/favourites', checkIfUserIsLoggedIn, (req, res, next) => {
-  const user = req.session.currentUser;
-  User.findById(user)
-    .populate('favouriteMovies')
-    .then(userFounded => {
-      res.json;
-    })
-    .catch(err => {
-      next(err);
-    });
+router.post('/', checkIfLoggedIn, async (req, res) => {
+	const { title, year, director, genre, score, duration, imgUrl } = req.body;
+	const movie = await Movie.create({ title, year, director, genre, score, duration, imgUrl });
+	res.status(201).json(movie);
 });
 
-router.post('/favourites/:id', checkIfUserIsLoggedIn, (req, res, next) => {
-  const user = req.session.currentUser;
-  const { id } = req.params;
-  // eslint-disable-next-line no-underscore-dangle
-  User.findById(user._id)
-    // eslint-disable-next-line no-shadow
-    .then(user => {
-      user.favouriteRecipes.splice(id, 1);
-      return user.save();
-    })
-    .then(() => res.json)
-    .catch(err => {
-      next(err);
-    });
+router.get('/:movieId', async (req, res) => {
+	const { movieId } = req.params;
+	const movie = await Movie.findById(movieId);
+	if (!movie) {
+		res.status(404).json('No movie found');
+	}
+	res.status(200).json(movie);
+});
+
+router.put('/edit/:movieId', checkIfLoggedIn, async (req, res) => {
+	const { movieId } = req.params;
+	const { title, year, director, genre, score, duration, imgUrl } = req.body;
+	const movie = await Movie.findByIdAndUpdate(
+		movieId,
+		{ title, year, director, genre, score, duration, imgUrl },
+		{ new: true }
+	);
+	if (!movie) {
+		res.status(404).json('No movie found');
+	}
+	res.status(201).json(movie);
+});
+
+router.delete('/:movieId', checkIfLoggedIn, async (req, res) => {
+	const { movieId } = req.params;
+	const movie = await Movie.findByIdAndDelete(movieId);
+	if (!movie) {
+		res.status(404).json('No movie found');
+	}
+	res.status(204).json(movie);
 });
 
 module.exports = router;

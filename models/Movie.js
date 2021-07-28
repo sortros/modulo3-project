@@ -2,13 +2,15 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const movieSchema = new Schema(
-	{
-		name: { type: String, required: true, unique: true },
-		genre: { type: String, required: true },
-    duration: { type: Number, required: true, unique: true },
-	}
-);
+const movieSchema = new Schema({
+	title: { type: String, required: true, unique: true },
+	year: { type: Number },
+	director: { type: String, required: true },
+	genre: [{ type: String, required: true }],
+	score: { type: Number, required: true },
+	duration: { type: String, required: true },
+	imgUrl: { type: String },
+});
 
 const Movie = mongoose.model('Movie', movieSchema);
 

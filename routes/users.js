@@ -1,30 +1,55 @@
 const express = require('express');
-const checkIfUserIsLoggedIn = require('../middlewares/auth');
-const User = require('../models/user-model');
+const { checkIfLoggedIn } = require('../middlewares');
+const User = require('../models/User');
 
 const router = express.Router();
 
-router.get('/inicio', (req, res) => res.json);
-
-router.get('/seriesTV', (req, res) => res.json);
-
-router.get('/Peliculas', checkIfUserIsLoggedIn, (req, res) => {
-   res.json;
+router.post('/favourite/:movieId', checkIfLoggedIn, async (req, res) => {
+	const { movieId } = req.params;
+	const loggedInUser = req.session.currentUser;
+	// eslint-disable-next-line no-underscore-dangle
+	const user = await User.findById(loggedInUser._id);
+	if (!user) {
+		res.status(404).json('No user found by that id');
+	}
+	user.favouriteMovies.push(movieId);
+	user.save();
+	res.status(201).json(user);
 });
 
-router.get('/profile/edit', checkIfUserIsLoggedIn, (req, res) => {
- res.json;
+router.post('/watchlater/:movieId', checkIfLoggedIn, async (req, res) => {
+	const { movieId } = req.params;
+	const loggedInUser = req.session.currentUser;
+	// eslint-disable-next-line no-underscore-dangle
+	const user = await User.findById(loggedInUser._id);
+	if (!user) {
+		res.status(404).json('No user found by that id');
+	}
+	user.watchLater.push(movieId);
+	user.save();
+	res.status(201).json(user);
 });
 
-router.post('/profile/edit', checkIfUserIsLoggedIn, (req, res, next) => {
- const { _id } = req.session.currentUser;
- User.findByIdAndUpdate(_id, { username, email}, { new: true })
-  .then(() => {
-  res.json;
-  })
-  .catch(err => {
-    next(err);
-  });
+// GET user's favourite movies
+router.get('/favourite', checkIfLoggedIn, async (req, res) => {
+	const loggedInUser = req.session.currentUser;
+	// eslint-disable-next-line no-underscore-dangle
+	const user = await User.findById(loggedInUser._id).populate('favouriteMovies');
+	if (!user) {
+		res.status(404).json('No user found by that id');
+	}
+	res.status(200).json(user.favouriteMovies);
 });
 
- module.exports = router;
+// GET user's watch later movies
+router.get('/watchlater', checkIfLoggedIn, async (req, res) => {
+	const loggedInUser = req.session.currentUser;
+	// eslint-disable-next-line no-underscore-dangle
+	const user = await User.findById(loggedInUser._id).populate('watchLater');
+	if (!user) {
+		res.status(404).json('No user found by that id');
+	}
+	res.status(200).json(user.watchLater);
+});
+
+module.exports = router;
