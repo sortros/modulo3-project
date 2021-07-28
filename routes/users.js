@@ -14,6 +14,7 @@ router.post('/favourite/:movieId', checkIfLoggedIn, async (req, res) => {
 	}
 	user.favouriteMovies.push(movieId);
 	user.save();
+	req.session.currentUser = user;
 	res.status(201).json(user);
 });
 
@@ -27,6 +28,7 @@ router.post('/watchlater/:movieId', checkIfLoggedIn, async (req, res) => {
 	}
 	user.watchLater.push(movieId);
 	user.save();
+	req.session.currentUser = user;
 	res.status(201).json(user);
 });
 

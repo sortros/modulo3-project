@@ -21,7 +21,7 @@ router.get('/whoami', (req, res, next) => {
 router.post('/signup', checkUsernameAndPasswordNotEmpty, async (req, res, next) => {
 	const { username, password, email } = res.locals.auth;
 	try {
-		const user = await User.findOne({ username });
+		const user = await User.findOne({ email });
 		if (user) {
 			return next(createError(422));
 		}
