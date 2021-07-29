@@ -25,8 +25,7 @@ const movies = [
 		duration: '2h 55min',
 		genre: ['Crime', 'Drama'],
 		score: 9.2,
-		imgUrl:
-			'http://2.bp.blogspot.com/_cIx9kzsjguw/TOyV2F_HbfI/AAAAAAAAAJo/Gqpi6NKkOnE/s1600/pp31150the-godfather-posters.jpg',
+		imgUrl:'http://2.bp.blogspot.com/_cIx9kzsjguw/TOyV2F_HbfI/AAAAAAAAAJo/Gqpi6NKkOnE/s1600/pp31150the-godfather-posters.jpg',
 	},
 	{
 		title: 'The Godfather: Part II',
@@ -35,8 +34,7 @@ const movies = [
 		duration: '3h 22min',
 		genre: ['Crime', 'Drama'],
 		score: 9,
-		imgUrl:
-			'https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg',
+		imgUrl:'https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg',
 	},
 	{
 		title: 'The Dark Knight',
