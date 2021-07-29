@@ -90,6 +90,7 @@ const movies = [
 		duration: '3h 2min',
 		genre: ['Western'],
 		score: 8.9,
+		imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/51SId17Z44L.jpg',
 	},
 	{
 		title: 'Fight Club',
@@ -98,6 +99,7 @@ const movies = [
 		duration: '2h 19min',
 		genre: ['Drama'],
 		score: 8.8,
+		imgUrl: 'https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg',
 	},
 	{
 		title: 'The Lord of the Rings: The Fellowship of the Ring',
@@ -106,6 +108,7 @@ const movies = [
 		duration: '2h 58min',
 		genre: ['Adventure', 'Drama', 'Fantasy'],
 		score: 8.8,
+		imgUrl: 'https://flxt.tmsimg.com/assets/p28828_p_v10_am.jpg',
 	},
 	{
 		title: 'Forrest Gump',
@@ -114,6 +117,7 @@ const movies = [
 		duration: '2h 22min',
 		genre: ['Comedy', 'Drama', 'Romance'],
 		score: 8.8,
+		imgUrl: 'https://pics.filmaffinity.com/Forrest_Gump-212765827-large.jpg',
 	},
 	{
 		title: 'Star Wars: Episode V - The Empire Strikes Back',
@@ -122,6 +126,7 @@ const movies = [
 		duration: '2h 4min',
 		genre: ['Action', 'Adventure', 'Fantasy', 'Sci-Fi'],
 		score: 8.8,
+		imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/91eOgodm4nL.jpg',
 	},
 	{
 		title: 'Inception',
@@ -130,6 +135,7 @@ const movies = [
 		duration: '2h 28min',
 		genre: ['Action', 'Adventure', 'Sci-Fi', 'Thriller'],
 		score: 8.8,
+		imgUrl: 'https://m.media-amazon.com/images/I/61Ug+K8o5FL._AC_.jpg',
 	},
 	{
 		title: 'The Lord of the Rings: The Two Towers',
@@ -138,6 +144,7 @@ const movies = [
 		duration: '2h 59min',
 		genre: ['Adventure', 'Drama', 'Fantasy'],
 		score: 8.7,
+		imgUrl: 'https://www.themoviedb.org/t/p/w500/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg',
 	},
 	{
 		title: 'One Flew Over the Cuckoo"s Nest',
@@ -146,6 +153,7 @@ const movies = [
 		duration: '2h 13min',
 		genre: ['Drama'],
 		score: 8.7,
+		imgUrl: 'https://m.media-amazon.com/images/I/51uHi30RLcL._AC_.jpg',
 	},
 	{
 		title: 'Goodfellas',
@@ -154,6 +162,7 @@ const movies = [
 		duration: '2h 26min',
 		genre: ['Crime', 'Drama'],
 		score: 8.7,
+		imgUrl: 'https://biblioteca.udem.edu.mx/images/2020/02/24/Goodfellas.jpg',
 	},
 	{
 		title: 'The Matrix',
@@ -162,6 +171,7 @@ const movies = [
 		duration: '2h 16min',
 		genre: ['Action', 'Sci-Fi'],
 		score: 8.7,
+		imgUrl: 'https://pics.filmaffinity.com/Matrix-165863239-large.jpg',
 	},
 	{
 		title: 'Shichinin no samurai',
@@ -170,6 +180,7 @@ const movies = [
 		duration: '3h 27min',
 		genre: ['Adventure', 'Drama'],
 		score: 8.7,
+		imgUrl: 'https://m.media-amazon.com/images/I/91OOTyd4ToL._AC_SY741_.jpg',
 	},
 	{
 		title: 'Star Wars',
@@ -178,6 +189,7 @@ const movies = [
 		duration: '2h 1min',
 		genre: ['Action', 'Adventure', 'Fantasy', 'Sci-Fi'],
 		score: 8.7,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/250px-Star_Wars_Logo.svg.png',
 	},
 	{
 		title: 'Cidade de Deus',
@@ -186,6 +198,7 @@ const movies = [
 		duration: '2h 10min',
 		genre: ['Crime', 'Drama'],
 		score: 8.7,
+		imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/51cY0Lsf1DL.jpg',
 	},
 	{
 		title: 'Se7en',
@@ -194,6 +207,7 @@ const movies = [
 		duration: '2h 7min',
 		genre: ['Crime', 'Drama', 'Mystery', 'Thriller'],
 		score: 8.6,
+		imgUrl: 'https://pics.filmaffinity.com/Seven_Se7en-734875211-mmed.jpg',
 	},
 	{
 		title: 'The Silence of the Lambs',
@@ -202,6 +216,7 @@ const movies = [
 		duration: '1h 58min',
 		genre: ['Crime', 'Drama', 'Thriller'],
 		score: 8.6,
+		imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/51th-Z4t6VL._SY355_.jpg',
 	},
 	{
 		title: 'It"s a Wonderful Life',
@@ -210,6 +225,7 @@ const movies = [
 		duration: '2h 10min',
 		genre: ['Drama', 'Family', 'Fantasy'],
 		score: 8.6,
+		imgUrl: 'https://pics.filmaffinity.com/Qu_bello_es_vivir-548929770-large.jpg',
 	},
 	{
 		title: 'La vita è bella',
@@ -218,6 +234,7 @@ const movies = [
 		duration: '1h 56min',
 		genre: ['Comedy', 'Drama', 'War'],
 		score: 8.6,
+		imgUrl: 'https://pics.filmaffinity.com/La_vida_es_bella-646167341-mmed.jpg',
 	},
 	{
 		title: 'The Usual Suspects',
@@ -226,6 +243,7 @@ const movies = [
 		duration: '1h 46min',
 		genre: ['Crime', 'Drama', 'Mystery', 'Thriller'],
 		score: 8.6,
+		imgUrl: 'https://m.media-amazon.com/images/I/91uAlM3mOAL._SY445_.jpg',
 	},
 	{
 		title: 'Léon',
@@ -234,6 +252,7 @@ const movies = [
 		duration: '1h 50min',
 		genre: ['Crime', 'Drama', 'Thriller'],
 		score: 8.6,
+		imgUrl: 'https://i.pinimg.com/originals/a6/06/20/a6062026e1335d1529877c8773ebd087.jpg',
 	},
 	{
 		title: 'Saving Private Ryan',
@@ -242,6 +261,7 @@ const movies = [
 		duration: '2h 49min',
 		genre: ['Drama', 'War'],
 		score: 8.6,
+		imgUrl: 'https://m.media-amazon.com/images/I/41zN6HGkL1L._AC_SS450_.jpg',
 	},
 	{
 		title: 'Sen to Chihiro no kamikakushi',
@@ -250,6 +270,7 @@ const movies = [
 		duration: '2h 5min',
 		genre: ['Animation', 'Adventure', 'Family', 'Fantasy', 'Mystery'],
 		score: 8.6,
+		imgUrl: 'https://m.media-amazon.com/images/I/51zSv4GedXL._SX342_.jpg',
 	},
 	{
 		title: 'American History X',
@@ -258,6 +279,7 @@ const movies = [
 		duration: '1h 59min',
 		genre: ['Crime', 'Drama'],
 		score: 8.5,
+		imgUrl: 'https://pics.filmaffinity.com/American_History_X-483807206-large.jpg',
 	},
 	{
 		title: 'C"era una volta il West',
@@ -266,6 +288,7 @@ const movies = [
 		duration: '2h 44min',
 		genre: ['Western'],
 		score: 8.6,
+		imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/51uClZqLekL._SY355_.jpg',
 	},
 	{
 		title: 'Interstellar',
@@ -274,6 +297,7 @@ const movies = [
 		duration: '2h 49min',
 		genre: ['Adventure', 'Drama', 'Sci-Fi'],
 		score: 8.6,
+		imgUrl: 'https://m.media-amazon.com/images/I/A1JVqNMI7UL._SL1500_.jpg',
 	},
 	{
 		title: 'Psycho',
@@ -282,6 +306,7 @@ const movies = [
 		duration: '1h 49min',
 		genre: ['Horror', 'Mystery', 'Thriller'],
 		score: 8.5,
+		imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/91OMTs-JSRL.jpg',
 	},
 	{
 		title: 'The Green Mile',
@@ -290,6 +315,7 @@ const movies = [
 		duration: '3h 9min',
 		genre: ['Crime', 'Drama', 'Fantasy', 'Mystery'],
 		score: 8.5,
+		imgUrl: 'https://static.wixstatic.com/media/bda12e_9f2b42965a1048a3b70cd3f004f07d5a~mv2.jpg/v1/fill/w_564,h_846,al_c,q_90/bda12e_9f2b42965a1048a3b70cd3f004f07d5a~mv2.jpg',
 	},
 	{
 		title: 'Casablanca',
@@ -298,6 +324,7 @@ const movies = [
 		duration: '1h 42min',
 		genre: ['Drama', 'Romance', 'War'],
 		score: 8.5,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/CasablancaPoster-Gold.jpg',
 	},
 	{
 		title: 'City Lights',
@@ -306,6 +333,7 @@ const movies = [
 		duration: '1h 27min',
 		genre: ['Comedy', 'Drama', 'Romance'],
 		score: 8.6,
+		imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/09/City_Lights_%281931_theatrical_poster_-_retouched%29.jpg',
 	},
 	{
 		title: 'Intouchables',
@@ -314,6 +342,7 @@ const movies = [
 		duration: '1h 52min',
 		genre: ['Biography', 'Comedy', 'Drama'],
 		score: 8.6,
+		imgUrl: 'https://pics.filmaffinity.com/Intocable-218166359-large.jpg',
 	},
 	{
 		title: 'Modern Times',
@@ -322,6 +351,7 @@ const movies = [
 		duration: '1h 27min',
 		genre: ['Comedy', 'Drama', 'Family', 'Romance'],
 		score: 8.5,
+		imgUrl: 'https://m.media-amazon.com/images/M/MV5BYjJiZjMzYzktNjU0NS00OTkxLWEwYzItYzdhYWJjN2QzMTRlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg',
 	},
 	{
 		title: 'Raiders of the Lost Ark',
@@ -330,6 +360,7 @@ const movies = [
 		duration: '1h 55min',
 		genre: ['Action', 'Adventure'],
 		score: 8.5,
+		imgUrl: 'https://m.media-amazon.com/images/I/51K8ouYrHeL._AC_SY445_.jpg',
 	},
 	{
 		title: 'The Pianist',
@@ -338,6 +369,7 @@ const movies = [
 		duration: '2h 30min',
 		genre: ['Biography', 'Drama', 'Music', 'War'],
 		score: 8.5,
+		imgUrl: 'https://pics.filmaffinity.com/El_pianista-978132965-mmed.jpg',
 	},
 	{
 		title: 'The Departed',
@@ -346,6 +378,7 @@ const movies = [
 		duration: '2h 31min',
 		genre: ['Crime', 'Drama', 'Thriller'],
 		score: 8.5,
+		imgUrl: 'https://www.encadenados.org/rdc/images/stories/rashomon/num_102/infiltrados-0.jpg',
 	},
 	{
 		title: 'Rear Window',
@@ -354,6 +387,7 @@ const movies = [
 		duration: '1h 52min',
 		genre: ['Mystery', 'Thriller'],
 		score: 8.5,
+		imgUrl: 'https://m.media-amazon.com/images/I/51cGMSDR2aL._SY445_.jpg',
 	},
 	{
 		title: 'Terminator 2: Judgment Day',
@@ -362,6 +396,7 @@ const movies = [
 		duration: '2h 17min',
 		genre: ['Action', 'Sci-Fi', 'Thriller'],
 		score: 8.5,
+		imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/91995HaPjdL._SL1500_.jpg',
 	},
 	{
 		title: 'Back to the Future',
@@ -370,6 +405,7 @@ const movies = [
 		duration: '1h 56min',
 		genre: ['Adventure', 'Comedy', 'Sci-Fi'],
 		score: 8.5,
+		imgUrl:'https://www.get-digital.es/web/getdigital/gfx/products/__generated__resized/1100x1100/18736BTTF_poster_main.jpg',
 	},
 	{
 		title: 'Whiplash',
@@ -378,6 +414,7 @@ const movies = [
 		duration: '1h 47min',
 		genre: ['Drama', 'Music'],
 		score: 8.5,
+		imgUrl:'https://www.efeeme.com/wp-content/uploads/whiplash-17-01-15.jpg',
 	},
 ];
 
