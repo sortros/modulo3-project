@@ -6,16 +6,11 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const cors = require('cors');
 const createError = require('http-errors');
-
 require('dotenv').config();
-
 const authRouter = require('./routes/auth');
-const movieRouter = require('./routes/movies');
-const userRouter = require('./routes/users');
-
+const demoRouter = require('./routes/demo');
 async function setupApp() {
 	const app = express();
-
 	app.use(
 		cors({
 			credentials: true,
@@ -41,16 +36,12 @@ async function setupApp() {
 			},
 		})
 	);
-
 	app.use('/', authRouter);
-	app.use('/movies', movieRouter);
-	app.use('/user', userRouter);
-
+	app.use('/protected', demoRouter);
 	// catch 404 and forward to error handler
 	app.use((req, res, next) => {
 		next(createError(404));
 	});
-
 	// eslint-disable-next-line no-unused-vars
 	app.use((error, req, res, next) => {
 		// eslint-disable-next-line no-console
@@ -68,8 +59,6 @@ async function setupApp() {
 		res.locals.responseError = responseError;
 		res.status(responseError.status).json({ error: responseError });
 	});
-
 	return app;
 }
-
 module.exports = setupApp;
