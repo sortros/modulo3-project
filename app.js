@@ -8,7 +8,8 @@ const cors = require('cors');
 const createError = require('http-errors');
 require('dotenv').config();
 const authRouter = require('./routes/auth');
-const demoRouter = require('./routes/demo');
+const movieRouter = require('./routes/movies');
+
 async function setupApp() {
 	const app = express();
 	app.use(
@@ -37,28 +38,22 @@ async function setupApp() {
 		})
 	);
 	app.use('/', authRouter);
-	app.use('/protected', demoRouter);
+	app.use('/movies', movieRouter);
 	// catch 404 and forward to error handler
 	app.use((req, res, next) => {
 		next(createError(404));
 	});
-	// eslint-disable-next-line no-unused-vars
-	app.use((error, req, res, next) => {
-		// eslint-disable-next-line no-console
-		const rawStatus = error.status ?? error.statusCode;
-		const status = typeof rawStatus === 'number' && rawStatus >= 400 && rawStatus < 600 ? rawStatus : undefined;
-		const rawName = error.name;
-		const name = typeof rawName === 'string' && status !== undefined ? rawName : undefined;
-		const rawMessage = error.message;
-		const message = typeof rawMessage === 'string' ? rawMessage : '';
-		const responseError = {
-			status: status ?? 500,
-			name: name ?? 'InternalServerError',
-			message,
-		};
-		res.locals.responseError = responseError;
-		res.status(responseError.status).json({ error: responseError });
+	// error handler
+	app.use((err, req, res) => {
+		// set locals, only providing error in development
+		res.locals.message = err.message;
+		res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+		// render the error page
+		res.status(err.status || 500);
+		res.render('error');
 	});
+
 	return app;
 }
 module.exports = setupApp;
